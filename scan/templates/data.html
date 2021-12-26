@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Data Page
+{% endblock %}
+
+{% block content %}
+<body class='text-center'></body>
+<br>
+<p>
+    {{ equity.name }} : {{ equity.price }}<br>
+    Historical Vol: {{ equity.hist_vol }}<br>
+    Implied Vol: {{ equity.iv }}<br>
+    Volatility Premium: {{ equity.vol_prem }}%
+</p>
+
+{% endblock %}

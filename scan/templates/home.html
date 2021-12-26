@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+<body class='text-center'>
+    <div class='container'>
+        <form method='POST' class='form-register' style='color:white'>
+                {{ form.hidden_tag() }}
+        <!--<img class='mb-4' src='~/Desktop/Projects/2022/flask_stock_scanner/bape_.png'> -->
+        <h1 class='h3 mb-3 font-weight-normal'>
+            Select Stock
+        </h1>
+        <br>
+        <br>
+        {{ form.stock.label() }}
+        {{ form.stock(class='form-control', placeholder='Equity') }}
+        {{ form.submit(class='btn btn-lg btn-block btn-primary') }}
+        </form>
+
+{% endblock %}
+
