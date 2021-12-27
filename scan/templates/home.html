@@ -5,7 +5,7 @@
 
 {% block content %}
 <body class='text-center'>
-    <div class='container'>
+    <div class='container' style="width: 350px">
         <form method='POST' class='form-register' style='color:white'>
                 {{ form.hidden_tag() }}
         <!--<img class='mb-4' src='~/Desktop/Projects/2022/flask_stock_scanner/bape_.png'> -->
@@ -15,7 +15,7 @@
         <br>
         <br>
         {{ form.stock.label() }}
-        {{ form.stock(class='form-control', placeholder='Equity') }}
+        {{ form.stock(class='form-control', placeholder='Ticker') }}
         {{ form.submit(class='btn btn-lg btn-block btn-primary') }}
         </form>
 

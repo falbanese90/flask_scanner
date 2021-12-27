@@ -4,13 +4,43 @@
 {% endblock %}
 
 {% block content %}
-<body class='text-center'></body>
+<body class="text-center">
+    <br>
+    <h1> {{ equity.name }} </h1>
+    <div class="container-sm" style="width: 250px;">
+        <table class="table table-hover table-dark">
+            <tbody>
+                <tr>
+                    <td>{{ equity.name }}</td>
+                    <td>${{ equity.price }}</td>
+                </tr>
+                <tr>
+                    <td>Historical Vol</td>
+                    <td>{{ equity.hist_vol }}</td>
+                </tr>
+                <tr>
+                    <td>Implied Vol</td>
+                    <td>{{ equity.iv }}</td>
+                </tr>
+                <tr>
+                    <td>Volatility Premium</td>
+                    <td>{{ equity.vol_prem }}%</td>
+                </tr>
+            </tbody>
+    </div>
+    <div class="container">
+        <table class="table table-hover table-dark">
+            <tbody>
+                {% for n in equity.fundamental: %}
+                <tr>
+                    <td>{{ n }}</td>
+                    <td>{{ equity.fundamental[n] }}</td>
+                </tr>   
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
 <br>
-<p>
-    {{ equity.name }} : {{ equity.price }}<br>
-    Historical Vol: {{ equity.hist_vol }}<br>
-    Implied Vol: {{ equity.iv }}<br>
-    Volatility Premium: {{ equity.vol_prem }}%
-</p>
-
+</body>
 {% endblock %}

@@ -7,7 +7,7 @@ from chart.config import ameritrade
 from pprint import pprint
 import math
 import numpy as np
-
+import os
 
 
 def price(ticker):
@@ -55,6 +55,9 @@ def price(ticker):
 
 
 def plot(dataframe, title, save_png=False):
+    home_path = os.getcwd()
+    path = '/Users/eliafrank/Desktop/Projects/2022/flask_stock_scanner/scan/static'
+    os.chdir(path)
     plt.figure(figsize=[16, 8])
     plt.plot(dataframe['close'], label=title)
     plt.plot(dataframe['MA10'], label='MA10')
@@ -62,14 +65,9 @@ def plot(dataframe, title, save_png=False):
     plt.ylabel('Price')
     plt.xlabel('Date')
     plt.legend()
-    if save_png == True:
-        plt.savefig(f'{title}.png')
-    else:
-        pass
-    ax = plt.gca()
-    ax.axes.xaxis.set_ticks([])
-    plt.grid(True)
-    plt.show()
+    plt.savefig(f'plot.png')
+    os.chdir(home_path)
+  
 
 
 def options(ticker):
